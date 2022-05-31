@@ -6,11 +6,11 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 18:11:35 by dieperei          #+#    #+#             */
-/*   Updated: 2022/05/31 18:21:00 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/05/31 18:57:11 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if (
 		(c >= 'a' && c <= 'z')
