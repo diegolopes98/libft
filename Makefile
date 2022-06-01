@@ -6,13 +6,11 @@
 #    By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 19:28:32 by dieperei          #+#    #+#              #
-#    Updated: 2022/06/01 00:57:19 by dieperei         ###   ########.fr        #
+#    Updated: 2022/06/01 06:38:50 by dieperei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
-			ft_strlcpy.c ft_strlen.c ft_memset.c ft_bzero.c ft_toupper.c \
-			ft_tolower.c ft_strncmp.c
+SRCS = ${wildcard *.c}
 
 OBJS	= ${SRCS:.c=.o}
 
@@ -35,3 +33,6 @@ fclean:	clean
 re: fclean all
 
 .PHONY: ${NAME} all clean fclean re
+
+target:	dependencies
+	cmds
