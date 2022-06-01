@@ -6,7 +6,7 @@
 #    By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 19:28:32 by dieperei          #+#    #+#              #
-#    Updated: 2022/06/01 06:38:50 by dieperei         ###   ########.fr        #
+#    Updated: 2022/06/01 18:08:56 by dieperei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,3 @@ fclean:	clean
 re: fclean all
 
 .PHONY: ${NAME} all clean fclean re
-
-target:	dependencies
-	cmds
