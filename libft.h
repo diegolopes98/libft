@@ -6,7 +6,7 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 18:53:19 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/02 00:43:19 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/02 02:49:17 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
 char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
 
 #endif // LIBFT_H
