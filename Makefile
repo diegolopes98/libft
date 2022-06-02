@@ -6,7 +6,7 @@
 #    By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 19:28:32 by dieperei          #+#    #+#              #
-#    Updated: 2022/06/01 18:08:56 by dieperei         ###   ########.fr        #
+#    Updated: 2022/06/02 20:06:30 by dieperei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ RM		= rm -f
 ${NAME}:	${OBJS}
 	ar rc ${NAME} ${OBJS}
 	ranlib ${NAME}
+	make clean
 
 all:	${NAME}
 
