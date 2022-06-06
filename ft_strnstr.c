@@ -6,7 +6,7 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 22:08:48 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/06 17:36:04 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/06 18:29:23 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	{
 		l = 0;
 		while (
-			big[b + l] == little[l] 
-			&& little[l] != '\0' 
+			big[b + l] == little[l]
+			&& little[l] != '\0'
 			&& b + l < len
 		)
 			l++;
