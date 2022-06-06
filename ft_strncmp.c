@@ -6,7 +6,7 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 00:54:06 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/01 18:35:07 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/06 17:29:04 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,14 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned char	c1;
-	unsigned char	c2;
+	size_t	i;
 
-	while (n)
+	i = 0;
+	while (i < n && (s1[i] != '\0' || s2[i] != '\0'))
 	{
-		c1 = *s1++;
-		c2 = *s2++;
-		if (c1 != c2)
-			return (c1 - c2);
-		if (!c1)
-			n = 0;
-		n--;
+		if (s1[i] != s2[i])
+			return ((unsigned char) s1[i] - (unsigned char) s2[i]);
+		i++;
 	}
 	return (0);
 }
