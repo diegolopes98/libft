@@ -6,7 +6,7 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 16:53:24 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/02 18:41:02 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/06 16:07:27 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	dstlen;
 	size_t	srclen;
 
+	if (!dst || !src)
+		return (0);
 	dstlen = 0;
 	while (dst[dstlen] && dstlen < size)
 		dstlen++;
