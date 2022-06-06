@@ -6,13 +6,13 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 00:40:44 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/01 00:46:51 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/06 16:45:30 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	if (c >= 65 && c <= 90)
+	if (c >= 'A' && c <= 'Z')
 		return (c + 32);
 	return (c);
 }
