@@ -6,7 +6,7 @@
 #    By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 19:28:32 by dieperei          #+#    #+#              #
-#    Updated: 2022/06/06 15:25:57 by dieperei         ###   ########.fr        #
+#    Updated: 2022/06/06 19:42:48 by dieperei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,11 +21,10 @@ NAME	= libft.a
 
 RM		= rm -f
 
-${NAME}:	${OBJS}
-	ar rc ${NAME} ${OBJS}
-	ranlib ${NAME}
-
 all:	${NAME}
+
+${NAME}:	${OBJS}
+	ar rcs ${NAME} ${OBJS}
 
 clean:
 	${RM} ${OBJS}
@@ -34,5 +33,8 @@ fclean:	clean
 	${RM} ${NAME}
 
 re: fclean all
+
+.c.o:	${SRCS}
+	gcc -Werror -Wextra -Wall -c ${SRCS}
 
 .PHONY: ${NAME} all clean fclean re
