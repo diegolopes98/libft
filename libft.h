@@ -6,7 +6,7 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 18:53:19 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/06 18:29:02 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/06 21:12:33 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ char	*ft_strdup(const char *s);
  */
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif // LIBFT_H
