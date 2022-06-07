@@ -6,7 +6,7 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 14:13:57 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/07 17:21:43 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/07 18:08:30 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,26 @@ static void	**ft_realloc(void *ptr, size_t curr_size, size_t new_size)
 {
 	void	*newptr;
 
-    if (new_size <= curr_size)
-        return ptr;
-    newptr = malloc(new_size);
-    ft_memmove(newptr, ptr, curr_size);
-    free(ptr);
-    return newptr;
+	if (new_size <= curr_size)
+		return (ptr);
+	newptr = malloc(new_size);
+	ft_memmove(newptr, ptr, curr_size);
+	free(ptr);
+	return (newptr);
+}
+
+static char	**ft_increment_arr(char	**arr, int arr_len, char *value)
+{
+	size_t	curr_size;
+	size_t	new_size;
+
+	curr_size = sizeof(char *) * (arr_len + 1);
+	new_size = sizeof(char *) * (arr_len + 2);
+	arr = (char **)ft_realloc(arr, curr_size, new_size);
+	arr_len++;
+	arr[arr_len - 1] = value;
+	arr[arr_len] = NULL;
+	return (arr);
 }
 
 char	**ft_split(char const *s, char c)
@@ -44,10 +58,7 @@ char	**ft_split(char const *s, char c)
 		if (s[end_str] == c && start_str != end_str)
 		{
 			str = ft_substr(s, start_str, end_str - start_str);
-			splitted = (char **)ft_realloc(splitted, sizeof(char *) * (splitted_len + 1) , sizeof(char *) * (splitted_len + 2));
-			splitted_len++;
-			splitted[splitted_len - 1] = str;
-			splitted[splitted_len] = NULL;
+			splitted = ft_increment_arr(splitted, splitted_len++, str);
 			start_str = end_str + 1;
 		}
 		else if (s[end_str] == c)
@@ -57,10 +68,7 @@ char	**ft_split(char const *s, char c)
 	if (start_str != end_str)
 	{
 		str = ft_substr(s, start_str, end_str - start_str);
-		splitted = (char **)ft_realloc(splitted, sizeof(char *) * (splitted_len + 1) , sizeof(char *) * (splitted_len + 2));
-		splitted_len++;
-		splitted[splitted_len - 1] = str;
-		splitted[splitted_len] = NULL;
+		splitted = ft_increment_arr(splitted, splitted_len++, str);
 	}
 	return (splitted);
 }
