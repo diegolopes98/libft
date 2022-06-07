@@ -6,11 +6,21 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 14:13:57 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/07 18:24:58 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/07 18:50:03 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static size_t	ft_arrlen(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i] != NULL)
+		i++;
+	return (i);
+}
 
 static void	**ft_realloc(void *ptr, size_t curr_size, size_t new_size)
 {
@@ -33,11 +43,13 @@ static char	**ft_init_arr(void)
 	return (arr);
 }
 
-static char	**ft_increment_arr(char	**arr, int arr_len, char *value)
+static char	**ft_increment_arr(char	**arr, char *value)
 {
 	size_t	curr_size;
 	size_t	new_size;
+	size_t	arr_len;
 
+	arr_len = ft_arrlen(arr);
 	curr_size = sizeof(char *) * (arr_len + 1);
 	new_size = sizeof(char *) * (arr_len + 2);
 	arr = (char **)ft_realloc(arr, curr_size, new_size);
@@ -51,7 +63,6 @@ char	**ft_split(char const *s, char c)
 {
 	int		start_str;
 	int		end_str;
-	int		splitted_len;
 	char	*str;
 	char	**splitted;
 
@@ -59,14 +70,13 @@ char	**ft_split(char const *s, char c)
 		return (0);
 	start_str = 0;
 	end_str = 0;
-	splitted_len = 0;
 	splitted = ft_init_arr();
 	while (s[end_str] != '\0')
 	{
 		if (s[end_str] == c && start_str != end_str)
 		{
 			str = ft_substr(s, start_str, end_str - start_str);
-			splitted = ft_increment_arr(splitted, splitted_len++, str);
+			splitted = ft_increment_arr(splitted, str);
 			start_str = end_str + 1;
 		}
 		else if (s[end_str] == c)
@@ -76,7 +86,7 @@ char	**ft_split(char const *s, char c)
 	if (start_str != end_str)
 	{
 		str = ft_substr(s, start_str, end_str - start_str);
-		splitted = ft_increment_arr(splitted, splitted_len++, str);
+		splitted = ft_increment_arr(splitted, str);
 	}
 	return (splitted);
 }
