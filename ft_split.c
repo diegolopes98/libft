@@ -6,7 +6,7 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 14:13:57 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/07 18:08:30 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/07 18:24:58 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,15 @@ static void	**ft_realloc(void *ptr, size_t curr_size, size_t new_size)
 	ft_memmove(newptr, ptr, curr_size);
 	free(ptr);
 	return (newptr);
+}
+
+static char	**ft_init_arr(void)
+{
+	char	**arr;
+
+	arr = malloc(sizeof(char *) * 1);
+	arr[0] = NULL;
+	return (arr);
 }
 
 static char	**ft_increment_arr(char	**arr, int arr_len, char *value)
@@ -51,8 +60,7 @@ char	**ft_split(char const *s, char c)
 	start_str = 0;
 	end_str = 0;
 	splitted_len = 0;
-	splitted = malloc(sizeof(char *) * 1);
-	splitted[splitted_len] = NULL;
+	splitted = ft_init_arr();
 	while (s[end_str] != '\0')
 	{
 		if (s[end_str] == c && start_str != end_str)
