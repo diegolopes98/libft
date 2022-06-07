@@ -6,7 +6,7 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 20:03:27 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/06 16:07:27 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/07 22:45:18 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s)
 	if (!s)
 		return (0);
 	slen = ft_strlen(s);
-	dup = ft_calloc(sizeof(char), slen + 1);
+	dup = ft_calloc(slen + 1, sizeof(char));
 	if (!dup)
 		return (0);
 	dup = ft_memcpy(dup, s, slen + 1);
