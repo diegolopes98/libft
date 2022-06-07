@@ -6,12 +6,14 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 00:42:48 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/02 00:57:38 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/07 22:29:51 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
+	if (c > 127)
+		c = c % 256;
 	while (*s != '\0' && *s != c)
 		s++;
 	if (*s == c)
