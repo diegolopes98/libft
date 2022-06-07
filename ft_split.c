@@ -6,7 +6,7 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 14:13:57 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/07 18:50:03 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/07 18:57:07 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static char	**ft_init_arr(void)
 	return (arr);
 }
 
-static char	**ft_increment_arr(char	**arr, char *value)
+static char	**ft_push_substr(char	**arr, const char *str, int s, int e)
 {
 	size_t	curr_size;
 	size_t	new_size;
@@ -54,7 +54,7 @@ static char	**ft_increment_arr(char	**arr, char *value)
 	new_size = sizeof(char *) * (arr_len + 2);
 	arr = (char **)ft_realloc(arr, curr_size, new_size);
 	arr_len++;
-	arr[arr_len - 1] = value;
+	arr[arr_len - 1] = ft_substr(str, s, e - s);
 	arr[arr_len] = NULL;
 	return (arr);
 }
@@ -63,7 +63,6 @@ char	**ft_split(char const *s, char c)
 {
 	int		start_str;
 	int		end_str;
-	char	*str;
 	char	**splitted;
 
 	if (!s)
@@ -75,8 +74,7 @@ char	**ft_split(char const *s, char c)
 	{
 		if (s[end_str] == c && start_str != end_str)
 		{
-			str = ft_substr(s, start_str, end_str - start_str);
-			splitted = ft_increment_arr(splitted, str);
+			splitted = ft_push_substr(splitted, s, start_str, end_str);
 			start_str = end_str + 1;
 		}
 		else if (s[end_str] == c)
@@ -84,9 +82,6 @@ char	**ft_split(char const *s, char c)
 		end_str++;
 	}
 	if (start_str != end_str)
-	{
-		str = ft_substr(s, start_str, end_str - start_str);
-		splitted = ft_increment_arr(splitted, str);
-	}
+		splitted = ft_push_substr(splitted, s, start_str, end_str);
 	return (splitted);
 }
