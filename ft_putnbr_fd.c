@@ -6,7 +6,7 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 23:08:02 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/07 23:11:43 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/08 16:17:00 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_get_abs_nbr(int nb)
 	return (abs_nb);
 }
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	int	nb_to_print;
 	int	abs_nb_to_print;

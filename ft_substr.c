@@ -6,7 +6,7 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 18:30:18 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/07 22:34:52 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/08 16:16:33 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (slen - start >= len)
 		substr = malloc(sizeof(char) * (len + 1));
 	else
-		substr  = malloc(sizeof(char) * (slen - start + 1));
+		substr = malloc(sizeof(char) * (slen - start + 1));
 	if (!substr)
 		return (0);
 	i = 0;
