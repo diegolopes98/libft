@@ -6,13 +6,11 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 18:21:24 by dieperei          #+#    #+#             */
-/*   Updated: 2022/05/31 18:22:30 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/08 23:50:51 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	return (c >= '0' && c <= '9');
 }

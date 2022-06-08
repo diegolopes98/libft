@@ -6,7 +6,7 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 02:25:25 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/07 22:30:07 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/08 23:52:32 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ char	*ft_strrchr(const char *s, int c)
 		i--;
 	if (s[i] == c)
 		return ((char *)&s[i]);
-	return (0);
+	return (NULL);
 }

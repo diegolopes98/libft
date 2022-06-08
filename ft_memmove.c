@@ -6,7 +6,7 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 19:33:32 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/06 16:07:27 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/08 23:51:15 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const char	*lsrc;
 
 	if (!dest || !src)
-		return (0);
+		return (NULL);
 	if (dest < src)
 		ft_memcpy(dest, src, n);
 	else

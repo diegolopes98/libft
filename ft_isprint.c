@@ -6,13 +6,11 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 18:28:13 by dieperei          #+#    #+#             */
-/*   Updated: 2022/05/31 19:56:59 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/08 23:49:51 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	return (c >= 32 && c <= 126);
 }

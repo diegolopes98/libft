@@ -6,9 +6,11 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 00:42:48 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/07 22:29:51 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/08 23:51:44 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -18,5 +20,5 @@ char	*ft_strchr(const char *s, int c)
 		s++;
 	if (*s == c)
 		return ((char *)s);
-	return (0);
+	return (NULL);
 }

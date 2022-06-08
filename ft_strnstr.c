@@ -6,7 +6,7 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 22:08:48 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/06 18:29:23 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/08 23:52:24 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			return ((char *)&big[b]);
 		b++;
 	}
-	return (0);
+	return (NULL);
 }

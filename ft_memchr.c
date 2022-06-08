@@ -6,7 +6,7 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 23:16:47 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/06 16:11:30 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/08 23:50:05 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		ptr++;
 		n--;
 	}
-	return (0);
+	return (NULL);
 }

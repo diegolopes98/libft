@@ -6,7 +6,7 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 14:13:57 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/07 18:57:07 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/08 23:51:28 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	**ft_split(char const *s, char c)
 	char	**splitted;
 
 	if (!s)
-		return (0);
+		return (NULL);
 	start_str = 0;
 	end_str = 0;
 	splitted = ft_init_arr();

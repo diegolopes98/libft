@@ -6,7 +6,7 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 21:11:56 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/06 21:29:09 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/08 23:51:58 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 
 	if (!s1 || !s2)
-		return (0);
+		return (NULL);
 	joined = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
 	if (!joined)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (s1[i] != '\0')
 	{
