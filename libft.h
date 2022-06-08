@@ -6,7 +6,7 @@
 /*   By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 18:53:19 by dieperei          #+#    #+#             */
-/*   Updated: 2022/06/07 23:10:21 by dieperei         ###   ########.fr       */
+/*   Updated: 2022/06/08 16:18:45 by dieperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,15 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+/*
+ *	Bonus
+ */
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 #endif // LIBFT_H
