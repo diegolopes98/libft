@@ -6,7 +6,7 @@
 #    By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 19:28:32 by dieperei          #+#    #+#              #
-#    Updated: 2022/06/08 16:49:23 by dieperei         ###   ########.fr        #
+#    Updated: 2022/06/08 17:09:10 by dieperei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS	= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c f
 			ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c \
 			ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c \
 
-SRCS_B	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c
+SRCS_B	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c
 			
 OBJS	= ${SRCS:.c=.o}
 
