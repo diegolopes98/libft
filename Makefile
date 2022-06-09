@@ -6,7 +6,7 @@
 #    By: dieperei <dieperei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/31 19:28:32 by dieperei          #+#    #+#              #
-#    Updated: 2022/06/08 22:32:53 by dieperei         ###   ########.fr        #
+#    Updated: 2022/06/09 19:10:13 by dieperei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,30 +19,34 @@ SRCS	= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c f
 SRCS_B	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
 			ft_lstiter.c ft_lstmap.c
 			
-OBJS	= ${SRCS:.c=.o}
+OBJS	= $(SRCS:.c=.o)
 
-OBJS_B	= ${SRCS_B:.c=.o}
+OBJS_B	= $(SRCS_B:.c=.o)
 
 NAME	= libft.a
 
 RM		= rm -f
 
-all:	${NAME}
+all: $(NAME)
 
-bonus:	${NAME}
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
-${NAME}:	${OBJS} ${OBJS_B}
-	ar rcs ${NAME} ${OBJS} ${OBJS_B}
+$(OBJS): $(SRCS)
+	cc -Werror -Wextra -Wall -c $(SRCS)
+
+bonus: $(OBJS_B)
+	ar rcs $(NAME) $(OBJS_B)
+
+$(OBJS_B): $(SRCS_B)
+	cc -Werror -Wextra -Wall -c $(SRCS_B)
 
 clean:
-	${RM} ${OBJS} ${OBJS_B}
+	$(RM) $(OBJS) $(OBJS_B)
 
-fclean:	clean
-	${RM} ${NAME}
+fclean: clean
+	$(RM) $(NAME)
 
 re: fclean all
 
-.c.o:	${SRCS} ${SRCS_B}
-	cc -Werror -Wextra -Wall -c ${SRCS} ${SRCS_B}
-
-.PHONY: ${NAME} all clean fclean re
+.PHONY: all clean fclean re
